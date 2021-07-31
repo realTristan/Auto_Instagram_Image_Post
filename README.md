@@ -1,4 +1,4 @@
-# Insta-Memer
+# Auto Image Upload to Instagram
 Automatically uploads images a folder
 
 This is mostly for meme instagram accounts
