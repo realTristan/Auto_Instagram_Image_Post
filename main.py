@@ -17,7 +17,7 @@ print(Style.BRIGHT + Fore.BLUE + """
                                               ░░░░░░                                      """)
 
 image_name = "image_1.jpg" # // Change "image_1.jpg" to the name of the picture you want to post
-wait_time = 2 # // Make this higher if you have bad internet
+wait_time = 3 # // Make this higher if you have bad internet
 username = "Your Instagram Username"
 password = "Your Instagram Password"
 caption = "The Post Caption"
@@ -31,10 +31,10 @@ def main():
     driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//input[@name='username']").send_keys(username)
     driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//input[@name='password']").send_keys(password).submit()
 
-    try: driver.implicitly_wait(3); driver.find_element_by_xpath("//a[contains(text(),'Not Now')]").click()
+    try: driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//a[contains(text(),'Not Now')]").click()
     except: driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//button[contains(text(),'Not Now')]").click()
 
-    try: driver.implicitly_wait(3); driver.find_element_by_xpath("//button[contains(text(),'Cancel')]").click()
+    try: driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//button[contains(text(),'Cancel')]").click()
     except: print(Style.BRIGHT + Fore.RED + "[ERROR] FAILED TO LOG IN" + Fore.BLUE)
 
     driver.implicitly_wait(wait_time); driver.find_element_by_xpath("//div[@role='menuitem']").click()
